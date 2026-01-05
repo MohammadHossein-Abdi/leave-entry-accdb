@@ -1,0 +1,2 @@
+SELECT LR.RecordID, E.EmployeeType AS [نوع عضویت], LR.FolderID, E.EmployeeFirstName & ' ' & E.EmployeeLastName AS [نام و نام خانوادگی], LR.EmployeeID, E.IdentificationID AS [کد ملی], LT.LeaveName AS [عنوان مرخصی], LR.StartDate, LR.EndDate, LR.HoursUsed AS [ساعات استفاده شده], LR.DaysUsed AS [روزهای استفاده شده], LR.DateSaved AS [تاریخ ثبت], LR.Comment AS یادداشت
+FROM (LeaveRecords AS LR INNER JOIN EmployeeUnionQuery AS E ON LR.EmployeeID = E.EmployeeID) INNER JOIN LeaveTypes AS LT ON LR.LeaveTypeID = LT.LeaveTypeID;
